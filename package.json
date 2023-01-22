@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "## Instructions ### Prerequisites [Node](https://nodejs.org/) should be installed on the sistem (verify with `node --version`) ### Start `node app.js`",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paulica1/Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paulica1/Backend/issues"
+  },
+  "homepage": "https://github.com/Paulica1/Backend#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

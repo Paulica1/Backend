@@ -1,8 +1,10 @@
-const http = require("http");
+const express = require("express");
 
-const hostname = "127.0.0.1";
+const app = express();
+
 const port = 8080;
-let todos = [
+
+const todos = [
   "play mario",
   "learn html",
   "learn css",
@@ -11,14 +13,17 @@ let todos = [
   "learn everything",
 ];
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "application/json");
-  res.setHeader("Access-Control-Allow-Origin", "*");
+app.get("/", (req, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
   const jsonResponseContent = JSON.stringify(todos);
-  res.end(jsonResponseContent);
+  res.send(jsonResponseContent);
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+app.post("/add", (req, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
+  res.sendStatus(200);
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
